@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mainDiv">
+        
+          <p>123</p>  
+
+        </div>
+        <br>
+        <div id="zaweraButton"><button id="test1">klinij
+        </button>
+    </div>
+        
+<script>
+    var loginButton = document.getElementById('test1');
+    loginButton.addEventListener('click', dodaj);
+    const name="simon";
+    const liczba1 = "dupa";
+    const liczba2 = "jacha";
+   // console.log(liczba1+liczba2);
+
+   // stary sposob budowania funkcji
+   function dodaj (){
+       console.log(liczba1+ liczba2);
+   }
+   // nowy sposob
+   const dodaj2 = () => {
+    return liczba1+ liczba2;
+   }
+   console.log(dodaj2);
+
+</script>
+</body>
+
+</html>

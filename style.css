@@ -1,0 +1,15 @@
+#mainDiv{
+    margin: auto;
+    text-align: center;
+    color: blue;
+}
+
+body{
+    align-items: center;
+}
+#zaweraButton{
+    
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
