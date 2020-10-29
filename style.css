@@ -1,3 +1,5 @@
+
+
 #mainDiv{
     max-width: 960px;
     align-self: center;
@@ -31,18 +33,16 @@
 #project-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 1fr 1fr 1fr;
     margin-top: 50px;
 }
 
-#project1{
-    display: flex;
-    grid-column: 1/4;
-    grid-row: 1/2;
-    background-color: aquamarine;
-    
-}
 
+.pro-image{
+    
+    max-width: 20%;
+    
+    }
 .pro-text{
     display: flex;
     align-items: center;
@@ -51,23 +51,53 @@
     margin-right: 5%;
     
 }
-
-.pro-image{
-    height: 100%;
-
-
+#project1{
+    display: flex;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    background-color: aquamarine;
+    
 }
 #project2{
+    display: flex;
+    flex-direction: row-reverse;
     grid-column: 1/4;
     grid-row: 2/3;
     background-color: red;
     
 }
 #project3{
+    display: flex;
     grid-column: 1/4;
     grid-row: 3/4;
     background-color: brown;
     
 }
-
+@media (max-width:480px) {
+    #project1{
+        display: flex;
+        grid-column: 1/4;
+        grid-row: 1/2;
+        background-color: aquamarine;
+        flex-direction: column;
+    }
+    #project2{
+        display: flex;
+        grid-column: 1/4;
+        grid-row: 2/3;
+        background-color: red;
+        flex-direction: column;
+    }
+    #project3{
+        display: flex;
+        grid-column: 1/4;
+        grid-row: 3/4;
+        background-color: brown;
+        flex-direction: column;
+    }
+    .pro-image{
+        max-width: 65%;
+        align-self: center;
+        }
+}
 
