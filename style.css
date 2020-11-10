@@ -293,7 +293,7 @@ p{
 
 
 }
-#calculator input{
+#calc-screen{
     text-align: end;
     grid-column: 1/6;
     grid-row: 1/2;
@@ -330,7 +330,7 @@ p{
     grid-column: 2/3;
     grid-row: 4/5;
 }
-#calcButton3{
+#calc-button-3{
     grid-column: 3/4;
     grid-row: 4/5;
 }

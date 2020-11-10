@@ -1,55 +1,66 @@
-let buttonCatcher = (buttonId) => {
-    return    document.getElementById(buttonId);
-    }
-
-
 
 //adding value of button to input field
-let addNumberToInputField = (buttonId) => {
-    buttonCatcher('calc-screen').value
-    += buttonCatcher(buttonId).value;
+const addButtonValueToInputField = (buttonId) => {
+    document.getElementById('calc-screen').value
+    += document.getElementById(buttonId).value;
     
-}
+};
 
-const eraseInputField = () => {
-    buttonCatcher('calc-screen').value = "";
-}
+let calculatorMemory = {
+    savedValue: 0,
+    operator: ''
+};
+const modifyCalculatorMemoryOperator = (chosenOperator) => {
+    calculatorMemory.operator = chosenOperator;
+};
+
+const savingInputValueToMemory = () => {
+    calculatorMemory.savedValue = document.getElementById('calc-screen').value;
+};
 
 
-buttonCatcher('calc-button-1').addEventListener('click', () =>{
-    addNumberToInputField('calc-button-1');
+
+const addButtonService = () => {
+    modifyCalculatorMemoryOperator('+');
+    savingInputValueToMemory();
+    document.getElementById('calc-screen').value = "";
+};
+
+document.getElementById('calc-button-plus')
+.addEventListener('click', () => {
+    addButtonService();
+    console.log('dziala?');
 });
 
-let addTriggerOnClickToId = (buttonId, triggeredFunction) => {
-    buttonCatcher(buttonId).addEventListener('click', () => {
+
+document.getElementById('calc-button-equal')
+.addEventListener('click', () => {
+    if(calculatorMemory.operator === '+'){
+        console.log(parseInt(calculatorMemory.savedValue)+
+            parseInt(document.getElementById('calc-screen').value));
+    }
+});
+
+const addErasingTriggerOnCeButton = () => {
+    document.getElementById('calc-button-CE')
+    .addEventListener('click', () => {
+        document.getElementById('calc-screen').value = "";
+    })
+};
+
+addErasingTriggerOnCeButton();
+
+const addTriggerOnClickToId = (buttonId, triggeredFunction) => {
+    document.getElementById(buttonId).addEventListener('click', () => {
         triggeredFunction([buttonId])
     })};
 
 
-let consol1 = () => {
+const consol1 = () => {
     console.log('sssss');
-}
-addTriggerOnClickToId('calc-button-2', addNumberToInputField);
-addTriggerOnClickToId('calc-button-0', addNumberToInputField);
-//addTriggerOnClickToId('calcButton3', addNumberToInputField('calcButton3'));
+};
 
-document.getElementById('calcButton3').addEventListener('click',() => {
-    document.getElementById('calc-screen').value
-    += document.getElementById('calcButton3').value
-})
+for(a=0; a<10; a++){
+    addTriggerOnClickToId('calc-button-'+a, addButtonValueToInputField);
+};
 
-
-// let input = '0';
-// let button = '1';
-// a = '0';
-// b = '1';
-
-
-
-// let addFiveToInput = (variable) => {
-//      variable + 5;
-// }
-
-// let addKotToInput = (variable) => {
-//     return variable + 'kot';
-// 
