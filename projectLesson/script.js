@@ -21,14 +21,16 @@ buttonCatcher('calc-button-1').addEventListener('click', () =>{
 });
 
 let addTriggerOnClickToId = (buttonId, triggeredFunction) => {
-    buttonCatcher(buttonId).addEventListener('click', function () {triggeredFunction}
-    
-    )};
+    buttonCatcher(buttonId).addEventListener('click', () => {
+        triggeredFunction([buttonId])
+    })};
+
 
 let consol1 = () => {
     console.log('sssss');
 }
-addTriggerOnClickToId('calc-button-2', consol1);
+addTriggerOnClickToId('calc-button-2', addNumberToInputField);
+addTriggerOnClickToId('calc-button-0', addNumberToInputField);
 //addTriggerOnClickToId('calcButton3', addNumberToInputField('calcButton3'));
 
 document.getElementById('calcButton3').addEventListener('click',() => {
