@@ -293,10 +293,19 @@ p{
 
 
 }
-#calc-screen{
-    text-align: end;
+#calc-border{
     grid-column: 1/6;
     grid-row: 1/2;
+    border: 1px solid ;
+    display: flex;
+    align-items: flex-end;
+}
+#calc-screen{
+    background-color: rgb(112, 112, 136);
+    text-align: right;
+    height: 100%;
+    align-self: center;
+    
 }
 #calc-button-7{
     grid-column: 1/2;

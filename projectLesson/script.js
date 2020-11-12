@@ -10,20 +10,15 @@ let calculatorMemory = {
     savedValue: 0,
     operator: ''
 };
-const modifyCalculatorMemoryOperator = (chosenOperator) => {
-    calculatorMemory.operator = chosenOperator;
-};
 
 const savingInputValueToMemory = () => {
     calculatorMemory.savedValue = document.getElementById('calc-screen').value;
 };
 
-
-
 const addButtonService = () => {
-    modifyCalculatorMemoryOperator('+');
+    calculatorMemory.operator = '+';
     savingInputValueToMemory();
-    document.getElementById('calc-screen').value = "";
+    document.getElementById('calc-screen').innerText = "\n f";
 };
 
 document.getElementById('calc-button-plus')
@@ -32,12 +27,23 @@ document.getElementById('calc-button-plus')
     console.log('dziala?');
 });
 
+const showMathematicalResult = () => {
+    if(calculatorMemory.operator === "+"){
+        document.getElementById('calc-screen').value = 
+        (parseInt(calculatorMemory.savedValue) 
+        + parseInt(document.getElementById('calc-screen').value));
+    }
+    
+    
+}
+/////////////////////////////////////////////////////////////////////
 
 document.getElementById('calc-button-equal')
 .addEventListener('click', () => {
-    if(calculatorMemory.operator === '+'){
+    if(calculatorMemory.operator === '+'){/*
         console.log(parseInt(calculatorMemory.savedValue)+
-            parseInt(document.getElementById('calc-screen').value));
+            parseInt(document.getElementById('calc-screen').value));*/
+            showMathematicalResult()
     }
 });
 
