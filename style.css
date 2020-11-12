@@ -294,17 +294,20 @@ p{
 
 }
 #calc-border{
+    display: flex;
     grid-column: 1/6;
     grid-row: 1/2;
     border: 1px solid ;
-    display: flex;
-    align-items: flex-end;
+    background-color: white;
 }
 #calc-screen{
-    background-color: rgb(112, 112, 136);
-    text-align: right;
-    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
     align-self: center;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+    background-color: bisque;
     
 }
 #calc-button-7{
