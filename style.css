@@ -79,6 +79,10 @@ body{
     margin-right: 5%;
 
 }
+.pro-text ul{
+    font-weight: bolder;
+}
+
 #project1{
     display: flex;
     grid-column: 1/4;

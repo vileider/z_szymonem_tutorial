@@ -12,6 +12,43 @@ let calculatorMemory = {
     savedValue2: 0,
     operator: ''
 };
+const minusButtonService = () => {
+    calculatorMemory.savedValue2 = 0;
+    calculatorMemory.savedValue = document.getElementById('calc-screen').innerText;
+    calculatorMemory.operator = '-';
+    document.getElementById('calc-screen').innerText = "";
+
+};
+
+document.getElementById('calc-button--')
+.addEventListener('click', () => {
+    minusButtonService();
+});
+
+const multiplyButtonService = () => {
+    calculatorMemory.savedValue2 = 0;
+    calculatorMemory.savedValue = document.getElementById('calc-screen').innerText;
+    calculatorMemory.operator = 'x';
+    document.getElementById('calc-screen').innerText = "";
+};
+
+document.getElementById('calc-button-x')
+.addEventListener('click', () => {
+    multiplyButtonService();
+});
+
+const divideButtonService = () => {
+    calculatorMemory.savedValue2 = 0;
+    calculatorMemory.savedValue = document.getElementById('calc-screen').innerText;
+    calculatorMemory.operator = '/';
+    document.getElementById('calc-screen').innerText = "";
+};
+
+document.getElementById('calc-button-divide')
+.addEventListener('click', () => {
+    divideButtonService();
+});
+
 
 const plusButtonService = () => {
     calculatorMemory.savedValue2 = 0;
@@ -23,8 +60,10 @@ const plusButtonService = () => {
 document.getElementById('calc-button-plus')
 .addEventListener('click', () => {
     plusButtonService();
-    console.log('dziala?');
+    
 });
+
+
 
 const showMathematicalResult = () => {
     calculatorMemory.savedValue2 = document.getElementById('calc-screen').innerText;
@@ -32,6 +71,29 @@ const showMathematicalResult = () => {
         document.getElementById('calc-screen').innerText = 
         (parseInt(calculatorMemory.savedValue) 
         + parseInt(calculatorMemory.savedValue2));
+        calculatorMemory.savedValue = 0;
+        console.log("+");
+    }
+    if(calculatorMemory.operator === "-"){
+        document.getElementById('calc-screen').innerText = 
+        (parseInt(calculatorMemory.savedValue)
+        - parseInt(calculatorMemory.savedValue2));
+        calculatorMemory.savedValue = 0;
+        console.log("-");
+    }
+    if(calculatorMemory.operator === "x"){
+        document.getElementById('calc-screen').innerText = 
+        (parseInt(calculatorMemory.savedValue)
+        * parseInt(calculatorMemory.savedValue2));
+        calculatorMemory.savedValue = 0;
+        console.log("x");
+    }
+    if(calculatorMemory.operator === "/"){
+        document.getElementById('calc-screen').innerText = 
+        (parseInt(calculatorMemory.savedValue)
+        / parseInt(calculatorMemory.savedValue2));
+        calculatorMemory.savedValue = 0;
+        console.log("/");
     }
     
     
@@ -40,11 +102,7 @@ const showMathematicalResult = () => {
 
 document.getElementById('calc-button-equal')
 .addEventListener('click', () => {
-    if(calculatorMemory.operator === '+'){/*
-        console.log(parseInt(calculatorMemory.savedValue)+
-            parseInt(document.getElementById('calc-screen').value));*/
-            showMathematicalResult()
-    }  
+    showMathematicalResult();
 });
 
 const addErasingTriggerOnCeButton = () => {
@@ -57,7 +115,8 @@ const addErasingTriggerOnCeButton = () => {
 addErasingTriggerOnCeButton();
 
 const addTriggerOnClickToId = (buttonId, triggeredFunction) => {
-    document.getElementById(buttonId).addEventListener('click', () => {
+    document.getElementById(buttonId)
+    .addEventListener('click', () => {
         triggeredFunction([buttonId])
     })};
 
@@ -68,5 +127,6 @@ const consol1 = () => {
 
 for(a=0; a<10; a++){
     addTriggerOnClickToId('calc-button-'+a, addButtonValueToInputField);
+    
 };
 
